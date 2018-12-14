@@ -15,7 +15,7 @@ body {
 
 #header img {
     
-    width: 50%;
+    width: 40%;
 }
 
 .container {
@@ -91,7 +91,13 @@ h1, h2 {
     }
   }
 
-  @media (min-width: 1660px) {
+  @media (max-width: 1448px) {
+      body {
+          background-size: 1448px;
+      }
+  }
+
+  @media (min-width: 1395px) {
       #header {
           position: absolute;
           right: 0;
@@ -104,5 +110,6 @@ h1, h2 {
     }  
     #header {
           width: 1920px;
+          left: 0;
       }
   }

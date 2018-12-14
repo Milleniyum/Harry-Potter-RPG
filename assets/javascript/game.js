@@ -37,12 +37,8 @@ $("#attack").on("click", function () {
     charHealth -= characters[opponent].counter;
     charAttack += characters[character].attack;
 
-    if (charHealth <= 0) {
-        $("#attack").hide();
-        $("#combat-text").html("You have been defeated in this duel with " + opponent + "! GAME OVER!<br>Click Restart to play again!");
-        charHealth = 0;
-        $("#restart").show();
-    } else if (oppHealth <= 0) {
+    if (oppHealth <= 0) {
+        charHealth += characters[opponent].counter; // Give health back
         $("#attack").hide();
         if ($("#opponents").children().length > 0) {
             $("#combat-text").html("You have won this duel with " + opponent + "!<br>You may choose another opponent.");
@@ -52,6 +48,11 @@ $("#attack").on("click", function () {
             $("#restart").show();
         }
         $("#defender").empty();
+    } else if (charHealth <= 0) {
+        $("#attack").hide();
+        $("#combat-text").html("You have been defeated in this duel with " + opponent + "! GAME OVER!<br>Click Restart to play again!");
+        charHealth = 0;
+        $("#restart").show();
     } else {
         $("#combat-text").html("You attack " + opponent + " for " + charAttack + " damage.<br> " + opponent + " attacked you back for " + characters[opponent].counter + " damage.");
 
@@ -93,7 +94,14 @@ $("#attack").on("click", function () {
     };
 });
 
-$("#restart").on("click", function() {
+$("#restart").on("click", function () {
     location.reload();
 });
+
+// Set the health text of each character
+$("#harry-health").text(characters["Harry Potter"].health);
+$("#hermione-health").text(characters["Hermione Granger"].health);
+$("#ron-health").text(characters["Ron Weasley"].health);
+$("#draco-health").text(characters["Draco Malfoy"].health);
+
 
