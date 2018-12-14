@@ -2,33 +2,49 @@ body {
     background-image: url("../images/background.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: 100%;
     font-family: 'Henny Penny', cursive;
-    margin: 10px;
+    color: white;
+    padding: 20px;
 }
 
 #header {
     width: 100%;
     text-align: right;
-    padding: 20px;
 }
 
 #header img {
-    height: 100%;
-    width: 40%;
+    
+    width: 50%;
 }
 
 .container {
-    background: blue;
     margin: 0;
 }
 
-.column {
+#characters .column, #your-character .column {
     background: white;
-    border: 5px solid blue;
-    border-right: none;
-    padding: 0 10px 0 10px;
-    text-align: center;
+    border: 3px solid #1caf28;
     color: black;
+}
+
+#opponents .column {
+    background: red;
+    border: 3px solid black;
+    color: black;
+}
+
+#defender .column {
+    background: black;
+    border: 3px solid #1caf28;
+    color: white;
+}
+
+.column {
+    padding: 0 10px 0 10px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
 }
 
 .column p {
@@ -39,8 +55,20 @@ body {
     width: 100%;
 }
 
-.hero-4 {
-    border-right: 5px solid blue;
+.column:hover {
+    opacity: 0.5;
+}
+
+h1, h2 {
+    margin: 10px 0;
+    font-size: 30px;
+    display: none;
+}
+
+#attack, #restart {
+    font-family: arial;
+    margin: 10px 0;
+    display: none;
 }
 
 /* Media Queries */
@@ -63,8 +91,18 @@ body {
     }
   }
 
-  @media (min-width: 1920px) {
+  @media (min-width: 1660px) {
       #header {
+          position: absolute;
+          right: 0;
+      }
+  }
+
+  @media (min-width: 1920px) {
+    body {
+        background-size: auto;
+    }  
+    #header {
           width: 1920px;
       }
   }

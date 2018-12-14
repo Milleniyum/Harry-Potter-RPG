@@ -16,25 +16,52 @@
 <body>
     <div id="header"><img src="assets/images/harry_potter_rpg.png"></div>
     <div class="container">
-        <div class="row">
-            <div class="col-3 column hero-1">
+        <div class="row" id="characters">
+            <div class="col-3 column" value="Harry Potter">
                 <p>Harry Potter</p>
                 <img src="assets/images/harry_potter.jpg">
-                <p>120</p>
+                <p id="harry-health">180</p>
             </div>
-            <div class="col-3 column hero-2">
+            <div class="col-3 column" value="Hermione Granger">
                 <p>Hermione Granger</p>
                 <img src="assets/images/hermione_granger.jpg">
-                <p>140</p>
+                <p id="hermione-health">170</p>
             </div>
-            <div class="col-3 column hero-3">
-
+            <div class="col-3 column" value="Ron Weasley">
+                <p>Ron Weasley</p>
+                <img src="assets/images/ron_weasley.jpg">
+                <p id="ron-health">160</p>
             </div>
-            <div class="col-3 column hero-4">
-
+            <div class="col-3 column" value="Draco Malfoy">
+                <p>Draco Malfoy</p>
+                <img src="assets/images/draco_malfoy.jpeg">
+                <p id="draco-health">150</p>
             </div>
         </div>
     </div>
+    <h1>YOUR CHARACTER</h1>
+    <div class="container">
+        <div class="row" id="your-character">
+            
+        </div>
+    </div>
+    <h1>OPPONENTS AVAILABLE</h1>
+    <div class="container">
+        <div class="row" id="opponents">
+           
+        </div>
+    </div>
+    <h2>DEFENDER</h1>
+    <div class="container">        
+        <div class="row" id="defender">
+            
+        </div>
+    </div>
+    <button id="attack" type="button" class="btn btn-danger">Attack</button>
+    <button id="restart" type="button" class="btn btn-primary">Restart</button>
+    <p id="combat-text"></p>
+
+
     <script src="assets/javascript/game.js"></script>
 </body>
 
